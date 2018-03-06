@@ -1,6 +1,21 @@
 const express = require('express');
 const app = express(); // create instance of express application
-const nunjuck = require('nunjucks');
+const nunjucks = require('nunjucks');
+
+// Nunjucks
+var locals = {
+  title: 'Example Title',
+  people: [
+    { name: 'Gandalf'},
+    { name: 'Frodo' },
+    { name: 'Hermione' }
+  ]
+};
+nunjucks.configure('views', {noCache: true});
+nunjucks.render('index.html', locals, function (err, output) {
+  if (err) throw err;
+  console.log(output);
+});
 
 // Log middleware
 app.use(function (req, res, next) {
