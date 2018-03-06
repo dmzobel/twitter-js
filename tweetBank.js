@@ -1,9 +1,15 @@
 const _ = require('lodash');
 
-let data = [{name: 'Marshall', content: 'Hi'}, {name: 'Anu', content: 'my name is anu'}];
+let data = [{name: 'Marshall', content: 'Hi'},
+            {name: 'Anu', content: 'my name is anu'},
+            {name: 'Anu', content: 'hello' }
+          ];
+
+let tweetIds = 0;
 
 function add(name, content) {
-  data.push({ name: name, content: content });
+  data.push({ name: name, content: content, tweetId: tweetIds});
+  tweetIds++;
 }
 
 function list() {
