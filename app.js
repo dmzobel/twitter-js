@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express(); // create instance of express application
+const nunjuck = require('nunjucks');
 
 // Log middleware
 app.use(function (req, res, next) {
