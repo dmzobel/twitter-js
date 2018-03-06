@@ -9,6 +9,10 @@ var locals = {
     { name: 'Gandalf' },
     { name: 'Frodo' },
     { name: 'Hermione' }
+  ],
+  beasts: [
+    { name: 'Phoenix' },
+    { name: 'Dragon' }
   ]
 };
 
