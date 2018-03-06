@@ -26,9 +26,10 @@ nunjucks.render('index.html', locals, function (err, output) {
   console.log(output);
 });
 
-// Log middleware
 app.use('/', routes);
+app.use(express.static('public'));
 
+// Log middleware
 app.use(function (req, res, next) {
   console.log(req.method, req.url, res.statusCode);
   // call `next`, or else your app will be a black hole — receiving requests but never properly responding
