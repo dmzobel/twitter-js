@@ -62,3 +62,27 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+.tweet {
+  margin: 15px;
+}
+
+.username {
+  font-weight: bold;
+  color: #56A3DC;
+}
+
+.tweet_body {
+  color: #56A3DC;
+}
+
+li {
+  list-style: none;
+}
+
+.propic {
+  float: left;
+  margin-right: 5px;
+  width: 50px;
+  height: 50px;
+}

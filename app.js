@@ -4,24 +4,11 @@ const nunjucks = require('nunjucks');
 const routes = require('./routes');
 
 // Nunjucks
-var locals = {
-  title: 'Hall of Fame',
-  people: [
-    { name: 'Gandalf' },
-    { name: 'Frodo' },
-    { name: 'Hermione' }
-  ],
-  beasts: [
-    { name: 'Phoenix' },
-    { name: 'Dragon' }
-  ]
-};
-
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 nunjucks.configure('views', {noCache: true});
-nunjucks.render('index.html', locals, function (err, output) {
+nunjucks.render('index.html', {}, function (err, output) {
   if (err) throw err;
   console.log(output);
 });
