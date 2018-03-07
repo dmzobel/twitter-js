@@ -15,11 +15,17 @@
     <!-- display tweets here -->
     {% for tweet in tweets %}
     <div class='tweet'>
-    <img class='propic' src="img/propic.png">
-    <a href='/users/{{tweet.name}}'></a>
+      <a href='/users/{{tweet.name}}'>
+        <img class='propic' src="img/propic.png">
+      </a>
 
-    <li class='username'><a href='/users/{{tweet.name}}'>{{tweet.name}}</a></li>
-    <li class='tweet_body'>{{tweet.content}}</li>
+      <li class='username'>
+        <a href='/users/{{tweet.name}}'>{{tweet.name}}</a>
+      </li>
+
+      <li class='tweet_body'>
+        <a href='/tweets/{{tweet.tweetId}}'>{{tweet.content}}</a>
+      </li>
     </div>
     {% endfor %}
 

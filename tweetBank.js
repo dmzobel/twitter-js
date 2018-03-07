@@ -1,15 +1,12 @@
 const _ = require('lodash');
 
-let data = [{name: 'Marshall', content: 'Hi'},
-            {name: 'Anu', content: 'my name is anu'},
-            {name: 'Anu', content: 'hello' }
-          ];
+let data = [{name: 'Marshall', content: 'Hi!', tweetId: 0}, {name: 'Marshall', content: 'Bye :(', tweetId: 1}]; // included some starter code to test functionality
 
-let tweetIds = 0;
+let tweetId = 2;
 
 function add(name, content) {
-  data.push({ name: name, content: content, tweetId: tweetIds});
-  tweetIds++;
+  data.push({ name: name, content: content, tweetId: tweetId});
+  tweetId++;
 }
 
 function list() {
@@ -20,7 +17,7 @@ function find(properties) {
   return _.cloneDeep(_.filter(data, properties));
 }
 
-module.exports = { add: add, list: list, find: find };
+module.exports = { add: add, list: list, find: find }; // each holds its corresponding function, so that the function can be used as methods in other files
 
 // SAMPLE DATA
 
@@ -42,5 +39,3 @@ const getFakeTweet = function () {
 for (let i = 0; i < 10; i++) {
   module.exports.add(getFakeName(), getFakeTweet());
 }
-
-// console.log(list());

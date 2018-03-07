@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express(); // create instance of express application
 const nunjucks = require('nunjucks');
-const routes = require('./routes');
+const routes = require('./routes/index');
 
 // Nunjucks
-app.set('view engine', 'html');
-app.engine('html', nunjucks.render);
+app.set('view engine', 'html'); // specifies the file extension of our templates
+app.engine('html', nunjucks.render); // pass html data into nunjucks.render function
 
-nunjucks.configure('views', {noCache: true});
+nunjucks.configure('views', {noCache: true}); // where to find our html file, and do not cache data
 nunjucks.render('index.html', {}, function (err, output) {
   if (err) throw err;
   console.log(output);
